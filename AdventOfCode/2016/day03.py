@@ -1600,9 +1600,10 @@ triangles = """810  679   10
 
 triangles = [[int(triangle[0:3].strip()), int(triangle[5:8].strip()), int(triangle[10:].strip())] for triangle in triangles.split("\n")]
 
-def isValidTriangle(triangle):
-	triangle.sort()
-	return (triangle[0] + triangle[1]) >= triangle[2]
+def isValidTriangle(tri):
+	tri = sorted(tri)
+	return (tri[0] + tri[1]) > tri[2]
+	# return tri[0] < tri[1] + tri[2] and tri[1] < tri[0] + tri[2] and tri[2] < tri[1] + tri[0]
 
 # Part 1
 count = 0
@@ -1613,8 +1614,8 @@ for triangle in triangles:
 print "Valid triangles in part 1:", count
 
 # Part 2
-from copy import deepcopy
-triangles2 = deepcopy(triangles)
+
+triangles2 = triangles[:]
 
 assert len(triangles) % 3 == 0
 
@@ -1625,8 +1626,29 @@ while len(triangles2) > 0:
 		if isValidTriangle(list(triangle)):
 			count2 += 1
 
+count3 = 0
+test1 = []
+test2 = []
+test3 = []
+for tri in triangles:
+	test1.append(tri[0])
+	test2.append(tri[1])
+	test3.append(tri[2])
+	if len(test1) == 3:
+		if isValidTriangle(test1):
+			count3 += 1
+		if isValidTriangle(test2):
+			count3 += 1
+		if isValidTriangle(test3):
+			count3 += 1
+		test1 = []
+		test2 = []
+		test3 = []
 
 
 
 print "Valid triangles in part 2:", count2
+print "Valid triangles in part 2 with second method:", count3
+
+
 
