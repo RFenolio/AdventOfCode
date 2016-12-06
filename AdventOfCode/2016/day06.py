@@ -650,7 +650,8 @@ ohpricwx
 tylgtpaw"""
 
 
-message = ""
+message1 = ""
+message2 = ""
 encrypted = encrypted.split('\n')
 for idx in range(len(encrypted[0])):
 	vals = {}
@@ -659,4 +660,9 @@ for idx in range(len(encrypted[0])):
 		vals[char] = vals.get(char, 0)
 		vals[char] += 1
 	sorted_vals = sorted(vals.items(), key=lambda item: (item[1]))
-	print sorted_vals[0] 
+	# part 1
+	message1 += sorted_vals[-1][0]
+	# part 2
+	message2 += sorted_vals[0][0]
+print message1
+print message2
