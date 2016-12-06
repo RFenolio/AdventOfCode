@@ -649,29 +649,10 @@ pipmrccp
 ohpricwx
 tylgtpaw"""
 
-# encrypted = """eedadn
-# drvtee
-# eandsr
-# raavrd
-# atevrs
-# tsrnev
-# sdttsa
-# rasrtv
-# nssdts
-# ntnada
-# svetve
-# tesnvt
-# vntsnd
-# vrdear
-# dvrsen
-# enarar"""
 
 message = ""
 encrypted = encrypted.split('\n')
-print encrypted[:10]
-print len(encrypted[0])
 for idx in range(len(encrypted[0])):
-	print idx
 	vals = {}
 	for item in encrypted:
 		char = item[idx]
