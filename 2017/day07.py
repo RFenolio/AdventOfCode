@@ -1,4 +1,4 @@
-# --- Task ---
+# --- Day 7: Recursive Circus ---
 with open('day07_puzzle_input.txt') as puzz:
 	puzzle_input = puzz.read()
 
