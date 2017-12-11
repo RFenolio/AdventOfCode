@@ -24,19 +24,8 @@ def hash_function(list_length, operations):
 	return knot[zero_idx:] + knot[:zero_idx]
 
 assert hash_function(5, test_input) == [3, 4, 2, 1, 0]
-# print hash_function(5, test_input)
-# testing = range(5)
-# print testing
-# a = 3
-# testing[:a] = testing[:a][::-1]
-# print testing
-# testing = testing[a:] + testing[:a]
-# print testing
-
 part_1_list = hash_function(256, part1_input)
-print "Part 1 solution:"
-print part_1_list[:2]
-print part_1_list[0] * part_1_list[1]
+print "Part 1 solution:", part_1_list[0] * part_1_list[1]
 
 
 
