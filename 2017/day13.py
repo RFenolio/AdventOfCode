@@ -91,11 +91,11 @@ def pass_firewall(firewall, delay=0):
 	return any(is_caught(delay, depth, rng) for depth, rng in firewall.items())
 
 def find_delay(firewall):
-	for delay in range(3861796, 3861800):
+	for delay in range(10000000):
 		caught = pass_firewall(firewall, delay)
 		if not caught:
 			return delay
 	return "did not pass"
 
-# assert find_delay(parse_simple(test_input)) == 10
+assert find_delay(parse_simple(test_input)) == 10
 print "Part 2 solution:", find_delay(parse_simple(puzzle_input))
