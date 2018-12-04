@@ -25,7 +25,6 @@ def split_guards(input):
 with open('day04_test_input.txt') as tf:
 	test_input = tf.read().splitlines()
 test_res = split_guards(test_input)
-pprint(test_res)
 
 def sleeping_guard(guard):
 	pairs = zip(guard[::2], guard[1::2])
