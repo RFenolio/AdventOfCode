@@ -93,6 +93,7 @@ def pass_firewall(firewall, delay=0):
 def find_delay(firewall):
 	for delay in range(10000000):
 		caught = pass_firewall(firewall, delay)
+		# caught = any( (delay + depth) % ((rng - 1) * 2) == 0 for depth, rng in firewall.items() )
 		if not caught:
 			return delay
 	return "did not pass"
