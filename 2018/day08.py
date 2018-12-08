@@ -2,8 +2,6 @@ with open('day08_input.txt') as f:
 	puzzle_input = f.read().split(' ')
 	puzzle_input = [int(num) for num in puzzle_input]
 
-# print(puzzle_input[:200])
-
 test_input = [int(num) for num in "2 3 0 3 10 11 12 1 1 0 1 99 2 1 1 2".split(' ')]
 
 class Node:
@@ -24,11 +22,6 @@ def parse_input(nums):
 	return node, nums
 
 test_res, test_nums = parse_input(test_input)
-# print(res.children)
-# print(res.metadata)
-# for node in res.children:
-# 	print(node.children)
-# 	print(node.metadata)
 def check_metadata(tree):
 	nodes = [tree]
 	meta_total = 0
@@ -55,8 +48,6 @@ def root_value(node):
 	return sum(root_vals)
 
 # Part 2
-
-print(len(test_res.children), test_res.metadata)
 assert root_value(test_res.children[1].children[0]) == 99
 assert root_value(test_res.children[1]) == 0
 assert root_value(test_res.children[0]) == 33
