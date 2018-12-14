@@ -69,28 +69,22 @@ def experiment(num_recipes: int):
 			end = end.next
 			if end.idx == num_recipes + 1:
 				target = end
-	# print(recipes)
-	# print(elf1.current.idx, elf1.current.score)
-	# print(elf2.current.idx, elf2.current.score)
-	# print(f"idx of end: {end.idx}")
 	return (str(target)[:10])
 
 # Part 1
-# print(experiment(30121))
+print(experiment(30121))
 
 
 # Part 2
 def experiment2(target: str):
 	recipes, elf1, elf2 = setup()
 	end = recipes.next
-	while end.idx < 30000000:
+	while end.idx < 50000000: # stop at a large number to prevent infinite loop
 		make_and_move(elf1, elf2, end)
 		while end.next is not None:
 			end = end.next
 			if end.left_vals(len(target)) == target:
 				return end.idx - len(target)
-			# if end.idx > 2000:
-			# 	print(end.idx, end.left_vals(len(target)))
 	return "oops! didn't find anything"
 
 
