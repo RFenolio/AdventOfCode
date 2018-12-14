@@ -63,8 +63,6 @@ def topo_sort(inpt):
 		remove_node(node, graph)
 	return res
 
-# remove
-
 def find_empties(graph):
 	empties = [key for key, val in graph.items() if not val]
 	return empties
