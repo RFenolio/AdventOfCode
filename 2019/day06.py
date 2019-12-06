@@ -63,8 +63,6 @@ I)SAN"""
 test_data_2 = parse_data(test_data_2)
 test_graph_2 = make_graph(test_data_2)
 
-# --- Part Two ---
-
 def get_path(obj, graph, destination = "COM"):
 	if obj == destination:
 		return [destination]
