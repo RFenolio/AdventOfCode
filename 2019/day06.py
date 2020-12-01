@@ -1,4 +1,3 @@
-from pprint import pprint
 
 with open("day06_input.txt") as f:
 	data = f.read()
