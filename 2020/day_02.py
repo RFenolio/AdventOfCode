@@ -21,11 +21,11 @@ print(valid_password_count)
 
 
 def is_valid_password_new(password):
-	low, high, char = parse_rules(password)
-	low -= 1
-	high -= 1
+	idx1, idx2, char = parse_rules(password)
+	idx1 -= 1
+	idx2 -= 1
 	pw = password[1]
-	return (pw[low] == char or pw[high] == char) and not (pw[low] == char and pw[high] == char)
+	return (pw[idx1] == char or pw[idx2] == char) and not (pw[idx1] == char and pw[idx2] == char)
 
 assert is_valid_password_new(['1-3 a', 'abcde']) == True
 assert is_valid_password_new(['1-3 b', 'cdefg']) == False
