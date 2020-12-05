@@ -4,7 +4,7 @@ with open("day_05.txt") as f:
 
 def get_seat_id(seat_code: str) -> int:
 	"""It's just a binary string"""
-	return int(seat_code.replace("F", "0").replace("B", "1").replace("L", "0").replace("R", "1"), 2)
+	return int(seat_code.replace("F", "0").replace("B", "1").replace("L", "0").replace("R", "1"), base=2)
 
 assert get_seat_id("BFFFBBFRRR") == 567
 assert get_seat_id("FFFBBBFRRR") == 119
