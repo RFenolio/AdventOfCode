@@ -9,7 +9,9 @@ print("Part 1:", (diffs.count(1)+1) * (diffs.count(3)+1))
 
 
 @lru_cache
-def count_combinations(nums, n):
+def count_combinations(nums, n=None):
+	if n is None:
+		n = len(nums) - 1
 	total = 0
 	if n == 0:
 		return 1
@@ -23,4 +25,4 @@ def count_combinations(nums, n):
 
 numbers.append(numbers[-1] + 3)
 numbers = tuple([0] + numbers)
-print("Part 2:", count_combinations(numbers, (len(numbers)-1)))
+print("Part 2:", count_combinations(numbers))
