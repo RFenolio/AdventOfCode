@@ -24,5 +24,6 @@ def count_combinations(nums, n=None):
 	return total
 
 numbers.append(numbers[-1] + 3)
+# need a hashable value for lru_cache
 numbers = tuple([0] + numbers)
 print("Part 2:", count_combinations(numbers))
