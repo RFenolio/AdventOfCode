@@ -2,13 +2,11 @@ with open("day_12.txt") as f:
 	actions = f.read().splitlines()
 
 FACINGS = ["N", "E", "S", "W"]
-facing = 1
-
 DIRECTIONS = {
 	"N": [-1, 0],
 	"E": [0, 1],
 	"S": [1, 0],
-	"W": [0, -1]
+	"W": [0, -1],
 }
 
 class Ship:
@@ -87,9 +85,3 @@ wp_ship = WaypointShip()
 for action in actions:
 	wp_ship.perform_action(action)
 print("Part 2:", sum(abs(x) for x in wp_ship.loc))
-
-
-
-
-
-
