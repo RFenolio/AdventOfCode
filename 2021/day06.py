@@ -19,10 +19,9 @@ def calculate_fish(fish_ages: List[int], num_days: int):
     
     # model fish for a number of days
     for _ in range(num_days):
-        today = fish_counts.pop(0)
-        fish_counts.append(0)
-        fish_counts[6] += today
-        fish_counts[8] += today
+        fish_spawning_today = fish_counts.pop(0)
+        fish_counts[6] += fish_spawning_today
+        fish_counts.append(fish_spawning_today)
     
     return sum(fish_counts)
     
