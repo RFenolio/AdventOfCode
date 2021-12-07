@@ -11,17 +11,17 @@ with open(input_file) as f:
 
 test_input = [16,1,2,0,4,2,7,1,2,14]
 
-def find_straight_fuel(crabs, idx):
-    return sum(abs(x - idx) for x in crabs)
+def find_straight_fuel(crabs, position):
+    return sum(abs(x - position) for x in crabs)
 
 def crab_sum(dist):
     return (dist * (dist + 1)) // 2
-    
-def find_crab_dist_fuel(crabs, idx):
-    return sum(crab_sum(abs(x - idx)) for x in crabs)
 
-def find_fuel(f, crabs):
-    return min(f(crabs, idx) for idx in range(min(crabs), max(crabs)+1))
+def find_crab_dist_fuel(crabs, position):
+    return sum(crab_sum(abs(x - position)) for x in crabs)
+
+def find_fuel(func, crabs):
+    return min(func(crabs, position) for position in range(min(crabs), max(crabs)+1))
 
 assert find_fuel(find_straight_fuel, test_input) == 37
 print("Part 1:", find_fuel(find_straight_fuel, puzzle_input))
