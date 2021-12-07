@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 """
 Get data 
 """
@@ -10,12 +11,12 @@ with open(input_file) as f:
 
 test_input = [16,1,2,0,4,2,7,1,2,14]
 
-def crab_sum(dist):
-    return (dist * (dist + 1)) // 2
-
 def find_straight_fuel(crabs, idx):
     return sum(abs(x - idx) for x in crabs)
 
+def crab_sum(dist):
+    return (dist * (dist + 1)) // 2
+    
 def find_crab_dist_fuel(crabs, idx):
     return sum(crab_sum(abs(x - idx)) for x in crabs)
 
