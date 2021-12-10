@@ -15,6 +15,8 @@ input_file = os.path.join(sys.path[0], "day10_test_input.txt")
 with open(input_file) as f:
     test_puzzle = f.read().splitlines()
 
+# === Part 1 ===
+
 pairs = {
     '(': ')',
     '[': ']',
@@ -60,6 +62,9 @@ assert complete_line(leftovers1) == '}}]])})]'
 _, leftovers2 = check_line('<{([{{}}[<[[[<>{}]]]>[]]')
 autocomplete2 = complete_line(leftovers2)
 assert autocomplete2 == '])}>'
+
+# === Part 2 ===
+
 autocomplete_scores = {
     ')': 1,
     ']': 2,
