@@ -75,7 +75,7 @@ def get_last(line):
     idx = -1
     val = ''
     for token in tokens.keys():
-        location = line.find(token)
+        location = line.rfind(token)
         if location > idx:
             idx = location
             val = token
@@ -87,3 +87,9 @@ def get_val(line):
 
 assert sum(get_val(line) for line in example2) == 281
 print('Part 2: ', sum(get_val(line) for line in get_input()))
+
+# print(get_val('nineseven2sixnineqd'))
+# for line in data[:100]:
+#     res = get_val(line)
+#     if res > 90:
+#         print(get_val(line), " - ", line.rstrip('\n'))
